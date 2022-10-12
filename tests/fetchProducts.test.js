@@ -13,7 +13,9 @@ describe('1 - Teste a função fetchProducts', () => {
   })
 
   it('Teste se, ao chamar a função fetchProducts com o argumento computador, a função fetch utiliza o endpoint', async () => {
-    await expect(fetchProducts('computador')).resolves.toBe('https://api.mercadolibre.com/sites/MLB/search?q=computadorr');
+    const call = await  fetchProducts('computador');
+
+    expect(fetch).toHaveBeenCalledWith('https://api.mercadolibre.com/sites/MLB/search?q=computador');
   });
 
   it('Teste se o retorno da função fetchProducts com o argumento /computador/ é uma estrutura de dados igual ao objeto computadorSearch', async () => {

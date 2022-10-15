@@ -75,8 +75,12 @@ const getIdFromProductItem = (product) => product.querySelector('span.id').inner
  * @param {string} product.price - Preço do produto.
  * @returns {Element} Elemento de um item do carrinho.
  */
+const clearLiFromCart = () => {
+const liCartItem = document.getElementsByClassName('cart__item');
 
-// fetch do item
+console.log(liCartItem);
+};
+
 const createCartItemElement = (product) => {
   console.log(product);
   const cartItens = document.querySelector('.cart__items');
@@ -106,11 +110,9 @@ const captureButtons = () => {
 window.onload = async () => {
    await callAndAppendItens();
    await captureButtons(); 
-  //  await createCartItemElement(fetchCartitem()); 
-  //  getID();
-  //  await fetchCartitem(); 
   };
 
+  // req 04
 // capturar o ID do botão clicado V
 // utilizar o id para a função fetch retornar um objeto V
 // utilizar o objeto como parametro da função createCartItemElement para criar os elementos V

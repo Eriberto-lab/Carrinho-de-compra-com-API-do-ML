@@ -67,6 +67,16 @@ const callAndAppendItens = async () => {
  */
 const getIdFromProductItem = (product) => product.querySelector('span.id').innerText;
 
+const clearCart = () => {
+  const li = document.querySelector('.cart__items');
+ li.innerHTML = '';
+};
+
+const buttonClearCart = () => {
+const buttonClear = document.querySelector('.empty-cart');
+  buttonClear.addEventListener('click', clearCart);
+};
+
 /**
  * Função responsável por criar e retornar um item do carrinho.
  * @param {Object} product - Objeto do produto.
@@ -118,6 +128,7 @@ const captureButtons = () => {
 window.onload = async () => {
    await callAndAppendItens();
    await captureButtons(); 
+   await buttonClearCart();
   };
 
   // req 04

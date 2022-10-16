@@ -78,7 +78,15 @@ const getIdFromProductItem = (product) => product.querySelector('span.id').inner
 const clearLiFromCart = () => {
 const liCartItem = document.getElementsByClassName('cart__item');
 
-console.log(liCartItem);
+ const returned = Array.from(liCartItem)
+ .forEach(function (element) {
+  element
+  .addEventListener('click', (event) => {
+    const el = event.target;
+    return el.remove();
+  });
+});
+return returned;
 };
 
 const createCartItemElement = (product) => {
@@ -88,8 +96,8 @@ const createCartItemElement = (product) => {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `ID: ${id} | TITLE: ${title} | PRICE: $${price}`;
-  // li.addEventListener('click', cartItemClickListener);
-  return cartItens.appendChild(li);
+   cartItens.appendChild(li);
+  li.addEventListener('click', clearLiFromCart());
 };
 
 const fetchCartitem = async (idProduct) => {

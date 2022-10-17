@@ -29,7 +29,7 @@ const showLoading = () => {
 const offLoading = () => {
   const load = document.querySelector('.loading');
  
- return setTimeout(load.remove(), 3000);
+ return setTimeout(load.remove(), 2000);
 };
 
 /**

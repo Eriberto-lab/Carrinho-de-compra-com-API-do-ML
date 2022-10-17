@@ -1,18 +1,13 @@
 const saveCartItems = () => {
   // seu código aqui
-  const olInnerContent = document.querySelectorAll('.cart__item');
+//   const olInnerContent = document.querySelectorAll('.cart__item');
 
-    return localStorage.setItem(JSON.stringify(olInnerContent));
-  // olInnerContent.forEach((element) => localStorage
-  // .setItem('cartItems', JSON.stringify(element.innerText)));
-};
-const addTolocalStorage = () => {
-  const buttonAdd = document.querySelectorAll('.item__add');
-  buttonAdd.forEach((element) => element.addEventListener('click', saveCartItems));
-};
+//     return localStorage.setItem(JSON.stringify(olInnerContent));
 
-window.onload = async () => {
- await addTolocalStorage();
+// };
+// const addTolocalStorage = () => {
+//   const buttonAdd = document.querySelectorAll('.item__add');
+//   buttonAdd.forEach((element) => element.addEventListener('click', saveCartItems));
 };
 
 if (typeof module !== 'undefined') {

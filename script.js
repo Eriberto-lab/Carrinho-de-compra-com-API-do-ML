@@ -82,7 +82,7 @@ const callAndAppendItens = async () => {
  * @param {Element} product - Elemento do produto.
  * @returns {string} ID do produto.
  */
-const getIdFromProductItem = (product) => product.querySelector('span.id').innerText;
+// const getIdFromProductItem = (product) => product.querySelector('span.id').innerText;
 
 const clearCart = () => {
   const li = document.querySelector('.cart__items');

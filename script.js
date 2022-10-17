@@ -17,6 +17,21 @@ const createProductImageElement = (imageSource) => {
   return img;
 };
 
+const showLoading = () => {
+  const header = document.querySelector('.header');
+  const p = document.createElement('p');
+  p.className = 'loading';
+  p.innerText = 'Carregando...';
+  header.appendChild(p);
+  return p;
+};
+
+const offLoading = () => {
+  const load = document.querySelector('.loading');
+ 
+ return setTimeout(load.remove(), 3000);
+};
+
 /**
  * Função responsável por criar e retornar qualquer elemento.
  * @param {string} element - Nome do elemento a ser criado.
@@ -54,7 +69,9 @@ const createProductItemElement = ({ id, title, thumbnail }) => {
 
 const callAndAppendItens = async () => {
   const getClassItems = document.querySelector('.items');
+  showLoading();
   const products = await fetchProducts('computador');
+  offLoading();
   const ArrayOfProducts = products.results;
   return ArrayOfProducts.forEach((element) => getClassItems
   .appendChild(createProductItemElement(element)));
@@ -111,7 +128,9 @@ const createCartItemElement = (product) => {
 };
 
 const fetchCartitem = async (idProduct) => {
+   showLoading();
   const response = await fetchItem(idProduct); 
+   offLoading();
   return createCartItemElement(response);
 };
 
@@ -120,6 +139,7 @@ const captureButtons = () => {
   const button = document.querySelectorAll('.item__add');
    const eventForEach = button.forEach((element) => element.addEventListener('click', (event) => {
       const eventTarget = event.target.parentNode;
+      
       return fetchCartitem(eventTarget.firstChild.innerText); 
     }));
     return eventForEach;
@@ -129,6 +149,7 @@ window.onload = async () => {
    await callAndAppendItens();
    await captureButtons(); 
    await buttonClearCart();
+  //  await saveCartItems();
   };
 
   // req 04

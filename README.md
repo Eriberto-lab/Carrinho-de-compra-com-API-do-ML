@@ -1,5 +1,5 @@
-# :construction: README customizado em construção ! :construction:
-### Link do projeto: https://gentle-dango-405e7c.netlify.app/
+# 🛒Projeto Carrinho de Comprar com API do Mercado Livre🛒
+### Link do projeto: carrinhoml.netlify.app
 
 Projeto de estudo onde realizo uma requisiçoes na API do Mercado Livre e testes unitarios.
 
